@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | LAILA BAGS</title>
+  <meta name="description"
+    content="Thank you for your order at LAILA BAGS. Your order has been successfully placed and is now in preparation.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>Complimentary Express Shipping on Orders Over $150</span>
+    <span>•</span>
+    <span>Use Code: <strong>LAILA20</strong> for 20% Off Spring Arrivals</span>
+  </div>
+
+  <!-- Common Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="LAILA BAGS Home">
+        <span class="logo-mark">LAILA<span>.</span></span>
+        <span class="logo-sub">Atelier Luxury</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="promotions.html" class="nav-link">News & Promotions</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="Search Collections" aria-label="Search Shop">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="Wishlist" aria-label="View Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="action-badge wishlist-count-badge">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Shopping Cart" aria-label="View Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="action-badge cart-count-badge">0</span>
+        </a>
+        <button id="mobile-menu-btn" class="menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-mark">LAILA<span>.</span></span>
+          <span class="logo-sub">Atelier Luxury</span>
+        </a>
+        <button id="mobile-close-btn" class="action-btn" aria-label="Close Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-right"
+            style="font-size:0.75rem;"></i></a>
+        <a href="shop.html" class="nav-link">Shop All <i class="fa-solid fa-chevron-right"
+            style="font-size:0.75rem;"></i></a>
+        <a href="categories.html" class="nav-link">Categories <i class="fa-solid fa-chevron-right"
+            style="font-size:0.75rem;"></i></a>
+        <a href="about.html" class="nav-link">About Us <i class="fa-solid fa-chevron-right"
+            style="font-size:0.75rem;"></i></a>
+        <a href="promotions.html" class="nav-link">News & Promotions <i class="fa-solid fa-chevron-right"
+            style="font-size:0.75rem;"></i></a>
+        <a href="contact.html" class="nav-link">Contact Us <i class="fa-solid fa-chevron-right"
+            style="font-size:0.75rem;"></i></a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span
+            class="badge badge-gold wishlist-count-badge">0</span></a>
+        <a href="cart.html" class="nav-link">Cart <span class="badge badge-new cart-count-badge">0</span></a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <p><i class="fa-regular fa-envelope"></i> concierge@lailabags.com</p>
+        <p><i class="fa-solid fa-phone"></i> +1 (800) 555-LAILA</p>
+        <p><i class="fa-solid fa-location-dot"></i> 742 Evergreen Galleria, Fashion Ave</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="container" style="margin-top: 1.5rem;">
+    <div class="breadcrumb-wrap">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-item active">Order Confirmation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Content Layout (Injected dynamically by script.js) -->
+  <main class="container" style="padding-bottom: 5.5rem;">
+    <div id="thankyou-container">
+      <!-- Injected by script.js -->
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-mark">LAILA<span>.</span></span>
+            <span class="logo-sub">Atelier Luxury</span>
+          </a>
+          <p class="footer-desc">
+            Curating timeless elegance and handcrafted luxury bags for the modern woman. Thoughtfully designed,
+            ethically crafted, and built to cherish for a lifetime.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="shop.html" class="footer-link">Shop All Bags</a></li>
+            <li><a href="categories.html" class="footer-link">Shop by Category</a></li>
+            <li><a href="promotions.html" class="footer-link">News & Promotions</a></li>
+            <li><a href="about.html" class="footer-link">About Our Atelier</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html" class="footer-link">My Shopping Cart</a></li>
+            <li><a href="wishlist.html" class="footer-link">Saved Wishlist</a></li>
+            <li><a href="about.html#quality" class="footer-link">Leather Care Guide</a></li>
+            <li><a href="contact.html#faq" class="footer-link">Shipping & Delivery</a></li>
+            <li><a href="contact.html#faq" class="footer-link">Returns & Exchanges</a></li>
+            <li><a href="contact.html" class="footer-link">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Atelier Contact</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Evergreen Galleria, Fashion Ave, Suite 400</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (800) 555-LAILA (5245)</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <span>concierge@lailabags.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>Mon – Sat: 9:00 AM – 8:00 PM EST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 LAILA BAGS Inc. All Rights Reserved. University Web Engineering Lab Assignment 1.
+        </div>
+        <div class="payment-badges-row">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="American Express"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

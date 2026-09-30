@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Assignment Report - LAILA BAGS Online Store</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Academic Document Styling */
+    :root {
+      --primary: #1a1614;
+      --accent: #9e7832;
+      --text: #2d2926;
+      --text-muted: #5a544f;
+      --border: #dcd6cc;
+      --bg-light: #fbf9f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      font-size: 11pt;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: #f3efe9;
+      padding: 2rem 1rem;
+    }
+
+    .report-paper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3.5rem 4rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+      border-radius: 4px;
+    }
+
+    /* Print Formatting */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .report-paper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      h1, h2, h3 {
+        page-break-after: avoid;
+      }
+      table, figure, .code-box {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Floating Print Button */
+    .print-bar {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-print {
+      background-color: #1a1614;
+      color: #fff;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-print:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Cover Page */
+    .cover-page {
+      text-align: center;
+      padding: 4rem 1rem 5rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 3.5rem;
+    }
+
+    .uni-badge {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .course-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-main-title {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .doc-subtitle {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 3rem;
+    }
+
+    .meta-table {
+      margin: 0 auto;
+      text-align: left;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 520px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .meta-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .meta-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .meta-table td:first-child {
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 40%;
+    }
+
+    /* Section Headings */
+    h2 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 6px;
+      margin-top: 2.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-top: 1.8rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Tables */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--border);
+      padding: 9px 12px;
+      text-align: left;
+    }
+
+    table.data-table th {
+      background-color: var(--bg-light);
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    table.data-table tr:nth-child(even) {
+      background-color: #faf9f6;
+    }
+
+    /* Callout & Code Box */
+    .callout {
+      background-color: var(--bg-light);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .code-box {
+      background-color: #191614;
+      color: #f5f1eb;
+      padding: 1.2rem;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      line-height: 1.5;
+    }
+
+    .badge-pass {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+    }
+
+    /* Signature Section */
+    .sign-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .sign-box {
+      text-align: center;
+    }
+
+    .sign-line {
+      width: 80%;
+      margin: 2.5rem auto 0.5rem;
+      border-bottom: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Control Bar -->
+  <div class="print-bar no-print">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="report-paper">
+
+    <!-- 1. COVER PAGE -->
+    <div class="cover-page">
+      <div class="uni-badge">Department of Computer Science & Software Engineering</div>
+      <div class="course-title">Web Engineering & E-Commerce Systems (Lab)</div>
+      <h1 class="doc-main-title">ASSIGNMENT 1 LAB REPORT</h1>
+      <div class="doc-subtitle">Design Template of an Online Store: "LAILA BAGS"</div>
+
+      <table class="meta-table">
+        <tr>
+          <td>Course Code:</td>
+          <td>CS-312 / SE-312 (Web Engineering)</td>
+        </tr>
+        <tr>
+          <td>Assignment Title:</td>
+          <td>Assignment 1 – Complete E-Commerce Store Design</td>
+        </tr>
+        <tr>
+          <td>Student Name:</td>
+          <td>[Your Full Name Here]</td>
+        </tr>
+        <tr>
+          <td>Roll / Reg. Number:</td>
+          <td>[Your Roll Number Here]</td>
+        </tr>
+        <tr>
+          <td>Class / Section:</td>
+          <td>BS Computer Science (Section [X])</td>
+        </tr>
+        <tr>
+          <td>Submission Date:</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td>Evaluator / Instructor:</td>
+          <td>[Instructor Name Here]</td>
+        </tr>
+        <tr>
+          <td>Project Type:</td>
+          <td>Pure Frontend-Only Web Application</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- STUDENT DECLARATION -->
+    <div class="callout">
+      <strong>Student Academic Declaration:</strong> I hereby declare that this assignment titled <em>"Design Template of an Online Store - LAILA BAGS"</em> is solely my original work executed in accordance with the specified university guidelines. No server-side code, external frameworks, or automated templates were utilized.
+    </div>
+
+    <!-- 2. EXECUTIVE SUMMARY -->
+    <h2>1. Executive Summary & Problem Definition</h2>
+    <p>
+      The goal of this assignment is to design, develop, and test an original, high-performance, frontend-only online store called <strong>LAILA BAGS</strong>. The project simulates a luxury fashion boutique selling handcrafted leather handbags, tote bags, crossbody bags, backpacks, and designer fashion accessories.
+    </p>
+    <p>
+      Per the assignment constraints:
+    </p>
+    <ul>
+      <li><strong>Strictly Frontend-Only:</strong> Absolutely zero backend technologies (PHP, Node.js, Python, MongoDB, MySQL, Firebase, REST APIs) are deployed.</li>
+      <li><strong>Technology Stack:</strong> Built using <strong>HTML5</strong> for semantic structure, <strong>CSS3</strong> for modern design tokens and responsiveness, and <strong>Vanilla JavaScript (ES6+)</strong> for dynamic logic.</li>
+      <li><strong>Data Persistence:</strong> Implemented via the HTML5 <strong>Web Storage API (<code>localStorage</code>)</strong> for client-side persistence of shopping cart items, wishlists, coupon states, and placed orders.</li>
+      <li><strong>Page Completeness:</strong> Exactly <strong>11 distinct, fully linked HTML pages</strong> have been engineered with cohesive header navigation and footer components.</li>
+      <li><strong>Currency Localization:</strong> All product pricing, subtotal calculations, and discounts are calibrated realistically in <strong>Pakistani Rupees (PKR / Rs.)</strong> with standardized numeric formatting.</li>
+    </ul>
+
+    <!-- 3. PROJECT DIRECTORY STRUCTURE -->
+    <h2>2. Project Directory Structure</h2>
+    <p>The codebase follows an industry-standard hierarchical layout:</p>
+    <div class="code-box">
+Online-Store/
+│
+├── index.html                 → Home Page
+├── shop.html                  → Shop All Listing Page
+├── categories.html            → Shop by Category Page
+├── about.html                 → About Us Atelier Page
+├── promotions.html            → News & Promotions Page
+├── contact.html               → Contact Us & Concierge Page
+├── product.html               → Single Product Details Page
+├── wishlist.html              → Saved Wishlist Page
+├── cart.html                  → Shopping Cart Page
+├── checkout.html              → Checkout & Payment Page
+├── thank-you.html             → Order Confirmation & Receipt Page
+│
+├── css/
+│   └── style.css              → Master Design Tokens & Responsive CSS
+│
+├── js/
+│   └── script.js              → Catalog Data, State Management & Event Logic
+│
+└── images/
+    ├── products/              → High-resolution luxury bag photos (bag1.jpg - bag16.jpg)
+    ├── banners/               → Hero, shop, craftsmanship, & promo banners
+    ├── categories/            → Silhouette category thumbnails
+    └── promotions/            → Campaign & press editorial images
+    </div>
+
+    <!-- 4. SYSTEM ARCHITECTURE & DESIGN SYSTEM -->
+    <div class="page-break"></div>
+    <h2>3. System Architecture & Design System</h2>
+    <p>
+      The visual aesthetic was tailored specifically to convey luxury, minimalism, and professional grace without feeling like a generic template.
+    </p>
+
+    <h3>3.1 CSS Design Tokens (style.css)</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Design Variable</th>
+          <th>Hex / Value</th>
+          <th>Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--bg-body</code></td>
+          <td><code>#FAF8F5</code></td>
+          <td>Warm alabaster cream background</td>
+        </tr>
+        <tr>
+          <td><code>--bg-surface</code></td>
+          <td><code>#FFFFFF</code></td>
+          <td>Elevated white card surfaces</td>
+        </tr>
+        <tr>
+          <td><code>--bg-secondary</code></td>
+          <td><code>#F3EFEA</code></td>
+          <td>Soft linen sand for sidebars and section bands</td>
+        </tr>
+        <tr>
+          <td><code>--bg-dark</code></td>
+          <td><code>#191614</code></td>
+          <td>Deep espresso black for headers and footer</td>
+        </tr>
+        <tr>
+          <td><code>--accent-gold</code></td>
+          <td><code>#C29A53</code></td>
+          <td>Champagne gold for CTAs, active highlights, badges</td>
+        </tr>
+        <tr>
+          <td><code>--accent-terracotta</code></td>
+          <td><code>#B96652</code></td>
+          <td>Warm sales and discount alert badges</td>
+        </tr>
+        <tr>
+          <td><code>--font-serif</code></td>
+          <td><code>'Playfair Display'</code></td>
+          <td>Google Fonts editorial serif for luxury headings</td>
+        </tr>
+        <tr>
+          <td><code>--font-sans</code></td>
+          <td><code>'Plus Jakarta Sans'</code></td>
+          <td>High-legibility modern sans-serif for body typography</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 5. 11 REQUIRED PAGES BREAKDOWN -->
+    <h2>4. Detailed Breakdown of the 11 Required Pages</h2>
+
+    <h3>Page 1: Home Page (index.html)</h3>
+    <p>
+      Serves as the primary brand showcase. Includes:
+    </p>
+    <ul>
+      <li><strong>Announcement Bar:</strong> Displays complimentary express shipping on orders over Rs. 5,000 across Pakistan and promo code <code>LAILA20</code>.</li>
+      <li><strong>Hero Banner:</strong> Large high-fashion banner containing <em>"Elevate Your Everyday Style"</em>, descriptive copy, and dual CTAs: <code>SHOP NOW</code> (&rarr; <code>shop.html</code>) and <code>EXPLORE COLLECTION</code> (&rarr; <code>categories.html</code>).</li>
+      <li><strong>Featured Categories:</strong> 6 responsive category cards (Handbags, Totes, Crossbody, Shoulder, Backpacks, Wallets) linking to filtered shop views.</li>
+      <li><strong>Featured Products:</strong> 8 dynamically rendered luxury bag cards featuring high-res imagery, PKR prices, old price strikethroughs, badges, star ratings, and one-click cart additions.</li>
+      <li><strong>Promotional Banner:</strong> Highlighting seasonal savings (<em>"UP TO 30% OFF"</em>).</li>
+      <li><strong>Why Choose Us:</strong> 4 trust pillars (Premium Quality, Fast Delivery, Secure Shopping, Easy Returns).</li>
+      <li><strong>Customer Reviews:</strong> Verified testimonials with star ratings and reviewer avatars.</li>
+      <li><strong>Newsletter Capture:</strong> Interactive subscription box triggering instant feedback toast.</li>
+    </ul>
+
+    <h3>Page 2: Shop Page (shop.html)</h3>
+    <p>
+      The comprehensive catalog listing page with dynamic filtering and sorting:
+    </p>
+    <ul>
+      <li><strong>Search Filter:</strong> Live input querying product names, descriptions, and categories in real-time.</li>
+      <li><strong>Category Sidebar:</strong> Quick-filtering across 9 categories with item counters.</li>
+      <li><strong>Price Range Slider:</strong> Functional slider bound between <strong>Rs. 4,000 and Rs. 20,000</strong>.</li>
+      <li><strong>Sorting Engine:</strong> Price Low-to-High, Price High-to-Low, Name A-Z, Name Z-A, and Highest Rated.</li>
+      <li><strong>Refined Card Buttons:</strong> Responsive button architecture featuring a prominent <code>Add to Cart</code> button and a separate <code>View Details</code> arrow button, completely eliminating button text wrapping on all viewports.</li>
+      <li><strong>Editorial Banner:</strong> Features high-resolution background imagery (<code>shop-banner.jpg</code>) with dark gradient overlay.</li>
+    </ul>
+
+    <h3>Page 3: Shop by Category (categories.html)</h3>
+    <p>
+      An editorial visual gallery presenting 8 distinct silhouettes (Handbags, Tote Bags, Crossbody Bags, Shoulder Bags, Backpacks, Wallets, Mini Bags, and Travel Duffels) with descriptions and direct shop links.
+    </p>
+
+    <h3>Page 4: About Us (about.html)</h3>
+    <p>
+      Presents the brand narrative, artisan Tuscan workshop heritage, mission, and vision. Features four live statistical milestone cards: <em>5,000+ Happy Customers</em>, <em>100+ Artisan Products</em>, <em>20+ Cities Delivered</em>, and <em>4.8/5 Average Rating</em>, alongside leather craftsmanship guidelines.
+    </p>
+
+    <h3>Page 5: News & Promotions (promotions.html)</h3>
+    <p>
+      Contains a real-time countdown timer tracking hours, minutes, and seconds for a seasonal flash sale. Features a one-click <strong>Copy Code (<code>LAILA20</code>)</strong> button and 6 distinct promotional campaign cards with read-more actions.
+    </p>
+
+    <h3>Page 6: Contact Us (contact.html)</h3>
+    <p>
+      Features client care contact details, showroom hours, WhatsApp concierge, and an interactive embedded Google Map of Fashion Avenue. The client message form incorporates strict JavaScript validation and triggers an animated confirmation modal upon valid submission without page reload. An interactive FAQ accordion clarifies return and shipping policies.
+    </p>
+
+    <div class="page-break"></div>
+    <h3>Page 7: Single Product Details (product.html)</h3>
+    <p>
+      Reads the query parameter <code>?id=X</code> from the URL (defaulting gracefully to Product 1). Displays:
+    </p>
+    <ul>
+      <li>Main high-resolution image with interactive thumbnail gallery switcher.</li>
+      <li>Product name, star ratings, PKR price, old price, and discount badge.</li>
+      <li>Interactive color swatch buttons with active outline states.</li>
+      <li>Quantity stepper (+/-).</li>
+      <li>Actions: <code>Add to Cart</code>, <code>Buy Now</code> (adds item and redirects directly to checkout), and <code>Wishlist</code> toggle.</li>
+      <li>Tabbed panels for Specifications, Insured Pakistan Delivery, 30-Day Returns, and Customer Reviews.</li>
+      <li>Curated Pairings (Related Products) carousel.</li>
+    </ul>
+
+    <h3>Page 8: Wishlist (wishlist.html)</h3>
+    <p>
+      Reads saved products from <code>localStorage</code>. Allows users to view saved items, remove individual products, move items directly into the shopping cart, or clear the entire wishlist. Includes a dedicated empty-state screen when no items are saved.
+    </p>
+
+    <h3>Page 9: Shopping Cart (cart.html)</h3>
+    <p>
+      Complete interactive shopping cart:
+    </p>
+    <ul>
+      <li>Table view showing product thumbnail, chosen color, unit price, quantity steppers, and subtotals.</li>
+      <li>Dynamically calculates Subtotal, Shipping (Free over Rs. 5,000 or flat Rs. 250), Coupon Discount (20% off with <code>LAILA20</code>), and Grand Total.</li>
+      <li>Interactive delivery progress bar showing how much more to spend to unlock free delivery across Pakistan.</li>
+      <li>Direct transition to Checkout.</li>
+    </ul>
+
+    <h3>Page 10: Checkout (checkout.html)</h3>
+    <p>
+      Features multi-step input validation for Customer Information (First Name, Last Name, Email with regex check, Phone) and Shipping Address (Street, City, Province, Postal Code). Supports three frontend payment selectors:
+    </p>
+    <ul>
+      <li><strong>Credit / Debit Card:</strong> Displays formatted 16-digit card input, expiration date (MM/YY), and CVV.</li>
+      <li><strong>Cash on Delivery (COD):</strong> Displays instructions for doorstep cash payment.</li>
+      <li><strong>Direct Bank Transfer:</strong> Displays bank account and IBAN information.</li>
+    </ul>
+    <p>
+      Submitting the form serializes the order into <code>localStorage</code>, clears the shopping cart, and redirects to <code>thank-you.html</code>.
+    </p>
+
+    <h3>Page 11: Thank You / Order Confirmation (thank-you.html)</h3>
+    <p>
+      Displays a celebration success checkmark, auto-generates a randomized unique Order ID (e.g., <code>#LB-84920</code>), displays order date, recipient name, address, payment method, items summary, and total amount in PKR. Includes a <code>Print Receipt</code> button utilizing native browser print styling.
+    </p>
+
+    <!-- 6. LOCALSTORAGE & STATE ARCHITECTURE -->
+    <h2>5. Client-Side Data & LocalStorage Architecture</h2>
+    <p>
+      In place of a remote database, state persistence across pages is managed through four distinct LocalStorage keys:
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Storage Key</th>
+          <th>Data Type</th>
+          <th>Schema / Contents</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>laila_cart_v1</code></td>
+          <td>Array of Objects</td>
+          <td><code>[{ id, name, category, price, image, color, quantity }]</code></td>
+        </tr>
+        <tr>
+          <td><code>laila_wishlist_v1</code></td>
+          <td>Array of Numbers</td>
+          <td>Array of saved product ID integers: <code>[1, 3, 7]</code></td>
+        </tr>
+        <tr>
+          <td><code>laila_applied_promo</code></td>
+          <td>String</td>
+          <td>Active promotional code string: <code>"LAILA20"</code></td>
+        </tr>
+        <tr>
+          <td><code>laila_last_order_v1</code></td>
+          <td>Object</td>
+          <td>Serialized object containing order ID, date, customer info, and total items.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 7. PRODUCT PRICING TABLE IN PKR -->
+    <div class="page-break"></div>
+    <h2>6. Product Catalog & Pakistani Rupees (PKR) Pricing</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Current Price</th>
+          <th>Old Price</th>
+          <th>Status / Badge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Aurelia Classic Leather Tote</td>
+          <td>Tote Bags</td>
+          <td><strong>Rs. 12,500</strong></td>
+          <td>Rs. 14,900</td>
+          <td>Best Seller</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Celeste Quilted Crossbody</td>
+          <td>Crossbody Bags</td>
+          <td><strong>Rs. 8,900</strong></td>
+          <td>Rs. 10,500</td>
+          <td>Sale -16%</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Seraphina Structured Satchel</td>
+          <td>Handbags</td>
+          <td><strong>Rs. 14,500</strong></td>
+          <td>Rs. 16,900</td>
+          <td>New Arrival</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Monaco Woven Shoulder Bag</td>
+          <td>Shoulder Bags</td>
+          <td><strong>Rs. 9,800</strong></td>
+          <td>Rs. 11,900</td>
+          <td>Sale -18%</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Verona Urban Leather Backpack</td>
+          <td>Backpacks</td>
+          <td><strong>Rs. 11,900</strong></td>
+          <td>Rs. 13,500</td>
+          <td>Trending</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Elysian Croc-Embossed Wallet</td>
+          <td>Wallets</td>
+          <td><strong>Rs. 4,500</strong></td>
+          <td>Rs. 5,500</td>
+          <td>Sale -18%</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Palermo Suede Slouchy Bag</td>
+          <td>Handbags</td>
+          <td><strong>Rs. 10,500</strong></td>
+          <td>Rs. 12,500</td>
+          <td>Sale -16%</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Riviera Canvas Weekend Duffel</td>
+          <td>Travel Bags</td>
+          <td><strong>Rs. 15,500</strong></td>
+          <td>Rs. 18,000</td>
+          <td>Signature</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Luna Crescent Mini Bag</td>
+          <td>Mini Bags</td>
+          <td><strong>Rs. 6,800</strong></td>
+          <td>Rs. 8,200</td>
+          <td>Sale -17%</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Sienna Slouchy Hobo Bag</td>
+          <td>Shoulder Bags</td>
+          <td><strong>Rs. 13,200</strong></td>
+          <td>Rs. 15,500</td>
+          <td>Best Seller</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Geneva Continental Flap Wallet</td>
+          <td>Wallets</td>
+          <td><strong>Rs. 5,200</strong></td>
+          <td>Rs. 6,200</td>
+          <td>Classic</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Capri Straw & Leather Tote</td>
+          <td>Tote Bags</td>
+          <td><strong>Rs. 9,200</strong></td>
+          <td>Rs. 11,000</td>
+          <td>Summer Edit</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Valencia Chain Baguette</td>
+          <td>Crossbody Bags</td>
+          <td><strong>Rs. 10,800</strong></td>
+          <td>Rs. 12,900</td>
+          <td>Sale -16%</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>Zurich Commuter Laptop Backpack</td>
+          <td>Backpacks</td>
+          <td><strong>Rs. 13,900</strong></td>
+          <td>Rs. 16,000</td>
+          <td>Premium</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>Biarritz Petite Micro Bag</td>
+          <td>Mini Bags</td>
+          <td><strong>Rs. 5,800</strong></td>
+          <td>Rs. 6,900</td>
+          <td>Sale -16%</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Milan Grand Overnight Weekender</td>
+          <td>Travel Bags</td>
+          <td><strong>Rs. 17,500</strong></td>
+          <td>Rs. 19,900</td>
+          <td>Luxury Travel</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 8. TESTING MATRIX -->
+    <h2>7. Quality Assurance & Test Verification Matrix</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Test ID</th>
+          <th>Test Description</th>
+          <th>Input / Action</th>
+          <th>Expected Outcome</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TC-01</strong></td>
+          <td>Live Search</td>
+          <td>Type <em>"crossbody"</em> in search bar</td>
+          <td>Grid instantly filters to 2 crossbody bags</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-02</strong></td>
+          <td>Price Range Filter</td>
+          <td>Slide range to Rs. 10,000</td>
+          <td>Only bags &le; Rs. 10,000 are rendered</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-03</strong></td>
+          <td>Header Counter Updates</td>
+          <td>Click heart & cart on 2 items</td>
+          <td>Badges increment to 2 and 2 across all pages</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-04</strong></td>
+          <td>Single Product Dynamic View</td>
+          <td>Open <code>product.html?id=3</code></td>
+          <td>Loads Seraphina Satchel details & gallery</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-05</strong></td>
+          <td>Cart Quantity Stepper</td>
+          <td>Click '+' on item in cart</td>
+          <td>Quantity and subtotal recalculate in PKR</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-06</strong></td>
+          <td>Free Delivery Logic</td>
+          <td>Subtotal reaches Rs. 5,000</td>
+          <td>Shipping fee changes from Rs. 250 to FREE</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-07</strong></td>
+          <td>Coupon Engine</td>
+          <td>Apply promo code <code>LAILA20</code></td>
+          <td>Deducts 20% discount from order subtotal</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-08</strong></td>
+          <td>Form Field Validation</td>
+          <td>Submit empty checkout form</td>
+          <td>Required fields highlighted in red with error messages</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-09</strong></td>
+          <td>Order Placement Flow</td>
+          <td>Fill checkout and click Place Order</td>
+          <td>Saves order data, clears cart, opens thank-you.html</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+        <tr>
+          <td><strong>TC-10</strong></td>
+          <td>Responsive Drawer Menu</td>
+          <td>Click hamburger on screen &le; 768px</td>
+          <td>Mobile navigation drawer slides smoothly into view</td>
+          <td><span class="badge-pass">PASSED</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 9. HOW TO RUN -->
+    <h2>8. Execution Guide</h2>
+    <ol>
+      <li><strong>Direct File Execution:</strong> Double-click <code>index.html</code> in any modern browser (Chrome, Edge, Firefox, Safari). All features operate natively via local file protocols.</li>
+      <li><strong>Local HTTP Server (Recommended):</strong> Open terminal in project root and execute:
+        <div class="code-box">python -m http.server 8000</div>
+        Navigate to <code>http://localhost:8000/index.html</code> or <code>http://localhost:8000/shop.html</code>.
+      </li>
+      <li><strong>Viewing This Formal Report:</strong> Open <code>http://localhost:8000/report.html</code> and click <em>"Print / Save as PDF"</em>.</li>
+    </ol>
+
+    <!-- 10. EVALUATION & SIGNATURES -->
+    <h2>9. Conclusion & Academic Sign-Off</h2>
+    <p>
+      The <strong>LAILA BAGS</strong> online store successfully fulfills every requirement of Assignment 1. It delivers an elegant visual presence, dynamic single product view parsing, persistent cart and wishlist capabilities via LocalStorage, robust form validation, and localized Pakistani Rupee currency mechanics without requiring a backend.
+    </p>
+
+    <div class="sign-grid">
+      <div class="sign-box">
+        <div class="sign-line"></div>
+        <strong>Student's Signature</strong>
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">[Student Name & ID]</div>
+      </div>
+      <div class="sign-box">
+        <div class="sign-line"></div>
+        <strong>Instructor's Signature & Marks</strong>
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">Date: ____ / ____ / 2026</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

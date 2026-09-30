@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout | LAILA BAGS</title>
+  <meta name="description" content="Complete your purchase securely. Enter customer shipping details and select preferred payment options for your handcrafted luxury bag order.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>Complimentary Express Shipping on Orders Over $150</span>
+    <span>•</span>
+    <span>Use Code: <strong>LAILA20</strong> for 20% Off Spring Arrivals</span>
+  </div>
+
+  <!-- Common Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="LAILA BAGS Home">
+        <span class="logo-mark">LAILA<span>.</span></span>
+        <span class="logo-sub">Atelier Luxury</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="promotions.html" class="nav-link">News & Promotions</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="Search Collections" aria-label="Search Shop">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="Wishlist" aria-label="View Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="action-badge wishlist-count-badge">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Shopping Cart" aria-label="View Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="action-badge cart-count-badge">0</span>
+        </a>
+        <button id="mobile-menu-btn" class="menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-mark">LAILA<span>.</span></span>
+          <span class="logo-sub">Atelier Luxury</span>
+        </a>
+        <button id="mobile-close-btn" class="action-btn" aria-label="Close Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="shop.html" class="nav-link">Shop All <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="categories.html" class="nav-link">Categories <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="about.html" class="nav-link">About Us <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="promotions.html" class="nav-link">News & Promotions <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="contact.html" class="nav-link">Contact Us <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span class="badge badge-gold wishlist-count-badge">0</span></a>
+        <a href="cart.html" class="nav-link">Cart <span class="badge badge-new cart-count-badge">0</span></a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <p><i class="fa-regular fa-envelope"></i> concierge@lailabags.com</p>
+        <p><i class="fa-solid fa-phone"></i> +1 (800) 555-LAILA</p>
+        <p><i class="fa-solid fa-location-dot"></i> 742 Evergreen Galleria, Fashion Ave</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero Banner -->
+  <div class="page-hero" style="padding: 3rem 0;">
+    <div class="container">
+      <span class="section-subtitle">Final Steps</span>
+      <h1>Secure Checkout</h1>
+      <p>Please enter your delivery destination and select your preferred payment method.</p>
+    </div>
+  </div>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="container">
+    <div class="breadcrumb-wrap">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-item active">Checkout</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Checkout Content -->
+  <main class="container" style="padding-bottom: 5.5rem;">
+    <div id="checkout-container">
+      <form id="checkout-form" class="checkout-layout" novalidate>
+        
+        <!-- Left: Form Steps -->
+        <div>
+
+          <!-- Step 1: Customer Information -->
+          <div class="checkout-box">
+            <h2 class="checkout-box-title">
+              <span class="step-num">1</span>
+              Customer Information
+            </h2>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="cust-first-name" class="form-label">First Name *</label>
+                <input type="text" id="cust-first-name" class="form-input" placeholder="e.g. Vivienne" required>
+                <span class="error-text">First name is required</span>
+              </div>
+              <div class="form-group">
+                <label for="cust-last-name" class="form-label">Last Name *</label>
+                <input type="text" id="cust-last-name" class="form-input" placeholder="e.g. Laurent" required>
+                <span class="error-text">Last name is required</span>
+              </div>
+              <div class="form-group">
+                <label for="cust-email" class="form-label">Email Address *</label>
+                <input type="email" id="cust-email" class="form-input" placeholder="e.g. vivienne@example.com" required>
+                <span class="error-text">Valid email is required</span>
+              </div>
+              <div class="form-group">
+                <label for="cust-phone" class="form-label">Phone Number *</label>
+                <input type="tel" id="cust-phone" class="form-input" placeholder="e.g. +1 (555) 234-5678" required>
+                <span class="error-text">Phone number is required</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Shipping Destination -->
+          <div class="checkout-box">
+            <h2 class="checkout-box-title">
+              <span class="step-num">2</span>
+              Shipping Address
+            </h2>
+            <div class="form-grid">
+              <div class="form-group col-full">
+                <label for="cust-address" class="form-label">Street Address *</label>
+                <input type="text" id="cust-address" class="form-input" placeholder="House/Apt, Suite, Street name" required>
+                <span class="error-text">Street address is required</span>
+              </div>
+              <div class="form-group">
+                <label for="cust-city" class="form-label">City *</label>
+                <input type="text" id="cust-city" class="form-input" placeholder="e.g. New York" required>
+                <span class="error-text">City is required</span>
+              </div>
+              <div class="form-group">
+                <label for="cust-province" class="form-label">Province / State *</label>
+                <input type="text" id="cust-province" class="form-input" placeholder="e.g. NY" required>
+                <span class="error-text">Province or state is required</span>
+              </div>
+              <div class="form-group">
+                <label for="cust-zip" class="form-label">Postal / Zip Code *</label>
+                <input type="text" id="cust-zip" class="form-input" placeholder="e.g. 10018" required>
+                <span class="error-text">Postal code is required</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Payment Method -->
+          <div class="checkout-box">
+            <h2 class="checkout-box-title">
+              <span class="step-num">3</span>
+              Payment Method
+            </h2>
+
+            <div class="payment-methods-list">
+              <!-- Option 1: Credit / Debit Card -->
+              <div>
+                <label class="payment-option-label active">
+                  <input type="radio" name="payment-method" value="card" class="payment-option-radio" checked>
+                  <div style="flex-grow: 1;">
+                    <strong>Credit / Debit Card</strong>
+                    <div style="font-size: 0.775rem; color: var(--text-muted);">Visa, MasterCard, Amex (Simulated frontend demo)</div>
+                  </div>
+                  <div style="font-size: 1.25rem; color: var(--text-light); display: flex; gap: 0.4rem;">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                  </div>
+                </label>
+
+                <!-- Subpanel: Credit Card Fields -->
+                <div id="panel-card" class="payment-subpanel active">
+                  <div class="form-grid">
+                    <div class="form-group col-full">
+                      <label for="cc-name" class="form-label">Name on Card *</label>
+                      <input type="text" id="cc-name" class="form-input" placeholder="e.g. Vivienne Laurent">
+                      <span class="error-text">Cardholder name is required</span>
+                    </div>
+                    <div class="form-group col-full">
+                      <label for="cc-number" class="form-label">Card Number *</label>
+                      <input type="text" id="cc-number" class="form-input" placeholder="4532 •••• •••• 8890" maxlength="19">
+                      <span class="error-text">16-digit card number required</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="cc-expiry" class="form-label">Expiry Date *</label>
+                      <input type="text" id="cc-expiry" class="form-input" placeholder="MM/YY" maxlength="5">
+                      <span class="error-text">MM/YY required</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="cc-cvv" class="form-label">CVV / CVC *</label>
+                      <input type="password" id="cc-cvv" class="form-input" placeholder="123" maxlength="4">
+                      <span class="error-text">3 or 4-digit code required</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Option 2: Cash on Delivery -->
+              <div>
+                <label class="payment-option-label">
+                  <input type="radio" name="payment-method" value="cod" class="payment-option-radio">
+                  <div style="flex-grow: 1;">
+                    <strong>Cash on Delivery (COD)</strong>
+                    <div style="font-size: 0.775rem; color: var(--text-muted);">Pay cash upon physical arrival at your doorstep</div>
+                  </div>
+                  <i class="fa-solid fa-hand-holding-dollar" style="font-size: 1.2rem; color: var(--accent-gold);"></i>
+                </label>
+                <div id="panel-cod" class="payment-subpanel">
+                  <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+                    Please prepare exact cash for the courier agent upon arrival. Our courier will contact you by phone prior to delivery.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Option 3: Bank Transfer -->
+              <div>
+                <label class="payment-option-label">
+                  <input type="radio" name="payment-method" value="bank" class="payment-option-radio">
+                  <div style="flex-grow: 1;">
+                    <strong>Direct Bank Wire Transfer</strong>
+                    <div style="font-size: 0.775rem; color: var(--text-muted);">Manual IBAN / Wire confirmation</div>
+                  </div>
+                  <i class="fa-solid fa-building-columns" style="font-size: 1.2rem; color: var(--accent-gold);"></i>
+                </label>
+                <div id="panel-bank" class="payment-subpanel">
+                  <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+                    Transfer directly to LAILA ATELIER LLC (Bank: Chase Manhattan Bank, Account: 984-2104-582, SWIFT: CHASUS33). Order dispatched upon wire confirmation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Order Summary Sidebar -->
+        <div>
+          <div class="summary-card">
+            <h3 class="summary-title">Order Summary</h3>
+
+            <!-- Cart Items Preview -->
+            <div id="checkout-items-preview" class="checkout-items-preview">
+              <!-- Dynamically populated -->
+            </div>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkout-subtotal">$0</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Express Delivery</span>
+              <span id="checkout-shipping">FREE</span>
+            </div>
+
+            <div id="checkout-discount-row" class="summary-row" style="color: var(--accent-terracotta); display: none;">
+              <span>Discount</span>
+              <strong id="checkout-discount">-$0</strong>
+            </div>
+
+            <div class="summary-total-row">
+              <span>Total Payable</span>
+              <span id="checkout-total" style="color: var(--accent-gold); font-size: 1.45rem;">$0</span>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg btn-full" style="margin-top: 2rem;">
+              PLACE ORDER <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <div style="text-align: center; margin-top: 1.25rem; font-size: 0.75rem; color: var(--text-light); line-height: 1.5;">
+              <i class="fa-solid fa-lock" style="color: var(--accent-gold);"></i> By placing your order, you agree to our 30-day luxury happiness promise and terms of service.
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-mark">LAILA<span>.</span></span>
+            <span class="logo-sub">Atelier Luxury</span>
+          </a>
+          <p class="footer-desc">
+            Curating timeless elegance and handcrafted luxury bags for the modern woman. Thoughtfully designed, ethically crafted, and built to cherish for a lifetime.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="shop.html" class="footer-link">Shop All Bags</a></li>
+            <li><a href="categories.html" class="footer-link">Shop by Category</a></li>
+            <li><a href="promotions.html" class="footer-link">News & Promotions</a></li>
+            <li><a href="about.html" class="footer-link">About Our Atelier</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html" class="footer-link">My Shopping Cart</a></li>
+            <li><a href="wishlist.html" class="footer-link">Saved Wishlist</a></li>
+            <li><a href="about.html#quality" class="footer-link">Leather Care Guide</a></li>
+            <li><a href="contact.html#faq" class="footer-link">Shipping & Delivery</a></li>
+            <li><a href="contact.html#faq" class="footer-link">Returns & Exchanges</a></li>
+            <li><a href="contact.html" class="footer-link">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Atelier Contact</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Evergreen Galleria, Fashion Ave, Suite 400</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (800) 555-LAILA (5245)</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <span>concierge@lailabags.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>Mon – Sat: 9:00 AM – 8:00 PM EST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 LAILA BAGS Inc. All Rights Reserved. University Web Engineering Lab Assignment 1.
+        </div>
+        <div class="payment-badges-row">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="American Express"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

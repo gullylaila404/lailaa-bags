@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop by Category | LAILA BAGS</title>
+  <meta name="description" content="Explore LAILA BAGS by silhouette: Handbags, Tote Bags, Crossbody Bags, Shoulder Bags, Backpacks, Wallets, Mini Bags, and Luxury Travel Duffels.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>Complimentary Express Shipping on Orders Over $150</span>
+    <span>•</span>
+    <span>Use Code: <strong>LAILA20</strong> for 20% Off Spring Arrivals</span>
+  </div>
+
+  <!-- Common Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="LAILA BAGS Home">
+        <span class="logo-mark">LAILA<span>.</span></span>
+        <span class="logo-sub">Atelier Luxury</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="categories.html" class="nav-link active">Categories</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="promotions.html" class="nav-link">News & Promotions</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="Search Collections" aria-label="Search Shop">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="Wishlist" aria-label="View Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="action-badge wishlist-count-badge">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Shopping Cart" aria-label="View Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="action-badge cart-count-badge">0</span>
+        </a>
+        <button id="mobile-menu-btn" class="menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-mark">LAILA<span>.</span></span>
+          <span class="logo-sub">Atelier Luxury</span>
+        </a>
+        <button id="mobile-close-btn" class="action-btn" aria-label="Close Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="shop.html" class="nav-link">Shop All <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="categories.html" class="nav-link active">Categories <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="about.html" class="nav-link">About Us <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="promotions.html" class="nav-link">News & Promotions <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="contact.html" class="nav-link">Contact Us <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span class="badge badge-gold wishlist-count-badge">0</span></a>
+        <a href="cart.html" class="nav-link">Cart <span class="badge badge-new cart-count-badge">0</span></a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <p><i class="fa-regular fa-envelope"></i> concierge@lailabags.com</p>
+        <p><i class="fa-solid fa-phone"></i> +1 (800) 555-LAILA</p>
+        <p><i class="fa-solid fa-location-dot"></i> 742 Evergreen Galleria, Fashion Ave</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero Banner -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-subtitle">Artisanal Architecture</span>
+      <h1>Shop by Category</h1>
+      <p>Explore eight distinct silhouettes sculpted from Italian calfskins and velvety suedes, tailored for every moment of life.</p>
+    </div>
+  </div>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="container">
+    <div class="breadcrumb-wrap">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-item active">Categories</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Categories Grid Section -->
+  <main class="container" style="padding-bottom: 5.5rem;">
+    <div class="category-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
+      
+      <!-- 1. Handbags -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-handbags.jpg" alt="Handbags" class="category-img" onerror="this.onerror=null; this.src='images/products/bag3.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Handbags & Satchels</h2>
+          <p class="category-desc">Structured top-handles, sculpted trapezoidal satchels, and slouchy bucket designs for poised daytime and evening presence.</p>
+          <a href="shop.html?category=handbags" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Handbags <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Tote Bags -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-totes.jpg" alt="Tote Bags" class="category-img" onerror="this.onerror=null; this.src='images/products/bag1.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Tote Bags</h2>
+          <p class="category-desc">Spacious, enduring carry-alls featuring dedicated laptop compartments, organic twill lining, and reinforced shoulder straps.</p>
+          <a href="shop.html?category=tote-bags" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Tote Bags <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Crossbody Bags -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-crossbody.jpg" alt="Crossbody Bags" class="category-img" onerror="this.onerror=null; this.src='images/products/bag2.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Crossbody Bags</h2>
+          <p class="category-desc">Hands-free elegance featuring chevron quilted lambskins, solid curb chains, and signature turn-lock closures.</p>
+          <a href="shop.html?category=crossbody-bags" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Crossbody <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Shoulder Bags -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-shoulder.jpg" alt="Shoulder Bags" class="category-img" onerror="this.onerror=null; this.src='images/products/bag4.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Shoulder Bags</h2>
+          <p class="category-desc">Sensual slouchy hobos and woven leather baguettes designed to tuck gracefully beneath the arm.</p>
+          <a href="shop.html?category=shoulder-bags" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Shoulder Bags <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Backpacks -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-backpacks.jpg" alt="Backpacks" class="category-img" onerror="this.onerror=null; this.src='images/products/bag5.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Backpacks</h2>
+          <p class="category-desc">Modern city commuter packs combining weather-resistant waxed hides with ergonomic padded straps.</p>
+          <a href="shop.html?category=backpacks" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Backpacks <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Wallets & Cardholders -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-wallets.jpg" alt="Wallets" class="category-img" onerror="this.onerror=null; this.src='images/products/bag6.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Wallets & Organizers</h2>
+          <p class="category-desc">Exotic croc-embossed calfskins and continental envelope flap wallets engineered with RFID security lining.</p>
+          <a href="shop.html?category=wallets" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Wallets <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. Mini Bags -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-minibags.jpg" alt="Mini Bags" class="category-img" onerror="this.onerror=null; this.src='images/products/bag9.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Mini Bags & Clutches</h2>
+          <p class="category-desc">Playful, high-fashion statement silhouettes designed to carry phone, lipstick, and cardholder with flair.</p>
+          <a href="shop.html?category=mini-bags" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Mini Bags <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 8. Travel Bags -->
+      <div class="category-card">
+        <div class="category-img-wrap" style="padding-top: 100%;">
+          <img src="images/categories/cat-travel.jpg" alt="Travel Bags" class="category-img" onerror="this.onerror=null; this.src='images/products/bag8.jpg';">
+        </div>
+        <div class="category-overlay">
+          <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 0.75rem;">2 Styles Available</span>
+          <h2 class="category-title">Travel & Weekend Duffels</h2>
+          <p class="category-desc">Heirloom carry-on weekenders handcrafted from full-grain steerhide and heavy organic canvas with shoe compartments.</p>
+          <a href="shop.html?category=travel-bags" class="btn btn-gold btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            Shop Travel Bags <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-mark">LAILA<span>.</span></span>
+            <span class="logo-sub">Atelier Luxury</span>
+          </a>
+          <p class="footer-desc">
+            Curating timeless elegance and handcrafted luxury bags for the modern woman. Thoughtfully designed, ethically crafted, and built to cherish for a lifetime.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="shop.html" class="footer-link">Shop All Bags</a></li>
+            <li><a href="categories.html" class="footer-link">Shop by Category</a></li>
+            <li><a href="promotions.html" class="footer-link">News & Promotions</a></li>
+            <li><a href="about.html" class="footer-link">About Our Atelier</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html" class="footer-link">My Shopping Cart</a></li>
+            <li><a href="wishlist.html" class="footer-link">Saved Wishlist</a></li>
+            <li><a href="about.html#quality" class="footer-link">Leather Care Guide</a></li>
+            <li><a href="contact.html#faq" class="footer-link">Shipping & Delivery</a></li>
+            <li><a href="contact.html#faq" class="footer-link">Returns & Exchanges</a></li>
+            <li><a href="contact.html" class="footer-link">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Atelier Contact</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Evergreen Galleria, Fashion Ave, Suite 400</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (800) 555-LAILA (5245)</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <span>concierge@lailabags.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>Mon – Sat: 9:00 AM – 8:00 PM EST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 LAILA BAGS Inc. All Rights Reserved. University Web Engineering Lab Assignment 1.
+        </div>
+        <div class="payment-badges-row">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="American Express"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
